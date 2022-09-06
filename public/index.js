@@ -22,7 +22,7 @@ class Autor {
 class Mensaje {
     constructor(id, nombre, apellido, edad, alias, avatar, mensaje) {
         this.autor = new Autor(id, nombre, apellido, edad, alias, avatar);
-        this.text = mensaje;
+        this.texto = mensaje;
     }
 };
 
