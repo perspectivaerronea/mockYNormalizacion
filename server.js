@@ -133,7 +133,7 @@ app.get('/api/productos-test', async (req, res) => {
 });
 
 // El servidor funcionando en el puerto 3000
-httpServerV.listen(3000, () => console.log('SERVER ON'))
+httpServerV.listen(process.env.PORT, () => console.log('SERVER ON'))
 
 io.on('connection', (socket) => {
 
@@ -143,7 +143,7 @@ io.on('connection', (socket) => {
         const arr = await productosDB.obtenerRegistros();
         const listaProductos = arr;
 
-        io.sockets.emit('listaProductos', listaProductos);
+        io.sockets.emit('listaProductos', listaProductos);    
 
         //Envio Mensajes en el Chat
         const msg = await mensajesDB.obtenerRegistros();
